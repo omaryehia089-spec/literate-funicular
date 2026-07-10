@@ -106,12 +106,17 @@ document.querySelectorAll("button, .heroBtn").forEach(btn => {
 const sections = document.querySelectorAll(".fade-in-section");
 const observerOptions = { threshold: 0.15, rootMargin: "0px 0px -50px 0px" };
 
+let countersStarted = false; // لمنع تكرار العداد عند الصعود والنزول
+
 const sectionObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
         if(entry.isIntersecting) {
             entry.target.style.opacity = "1";
             entry.target.style.transform = "translateY(0)";
-            if(entry.target.id === "stats") { startCounters(); }
+            if(entry.target.id === "stats" && !countersStarted) { 
+                countersStarted = true; 
+                startCounters(); 
+            }
             observer.unobserve(entry.target);
         }
     });
@@ -125,21 +130,22 @@ sections.forEach(sec => {
 });
 
 // ==========================================
-// 6. Interactive Stats Counters
+// 6. Interactive Stats Counters (Fixed & Stable)
 // ==========================================
 function startCounters() {
     const counters = document.querySelectorAll(".counter");
     counters.forEach(counter => {
         const target = +counter.getAttribute("data-target");
-        const speed = target / 50; 
+        let count = 0;
+        const speed = target / 40; 
+
         const updateCount = () => {
-            const count = +counter.innerText.replace(/[^0-8.]/g, "");
+            count = count + speed;
             if (count < target) {
-                const newCount = Math.ceil(count + speed);
-                if(target === 2500) counter.innerText = "+" + newCount;
-                else if(target === 98) counter.innerText = newCount + "%";
-                else counter.innerText = newCount + "+";
-                setTimeout(updateCount, 25);
+                if(target === 2500) counter.innerText = "+" + Math.ceil(count);
+                else if(target === 98) counter.innerText = Math.ceil(count) + "%";
+                else counter.innerText = Math.ceil(count) + "+";
+                setTimeout(updateCount, 30);
             } else {
                 if(target === 2500) counter.innerText = "+" + target;
                 else if(target === 98) counter.innerText = target + "%";
@@ -216,4 +222,4 @@ const customStyles = `
 const styleSheet = document.createElement("style");
 styleSheet.innerText = customStyles;
 document.head.appendChild(styleSheet);
-        
+                                                      
