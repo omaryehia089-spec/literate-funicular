@@ -1,238 +1,175 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>المنصة الرسمية | أ/ السيد البنا 2027</title>
+    <title>أ/السيد البنا | فتح باب حجز 2027</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
-<body class="dark-theme">
 
-    <!-- شاشة تحميل ذكية سينمائية -->
+<body>
+
+    <!-- شاشة تحميل مميزة -->
     <div id="loader">
-        <div class="loader-content">
-            <div class="loader-pulse"></div>
-            <span class="loader-logo-text">ELBANNA 2027</span>
-        </div>
+        <div class="loader-circle"></div>
     </div>
 
-    <!-- بار التنقل الزجاجي العائم -->
-    <nav class="glass-nav">
-        <div class="nav-container">
+    <!-- الهيدر الرئيسي للموقع -->
+    <header class="hero">
+        <div class="bg"></div>
+        <nav>
             <div class="logoArea">
-                <div class="logo-glow"></div>
                 <img src="logo.png" alt="Logo">
                 <span>ELBANNA</span>
             </div>
             <div class="menu">
-                <a href="#about" class="nav-link"><i class="fa-solid fa-user-tie"></i> عن المستر</a>
-                <a href="#features" class="nav-link"><i class="fa-solid fa-star"></i> المميزات</a>
-                <a href="#stats" class="nav-link"><i class="fa-solid fa-chart-simple"></i> إنجازاتنا</a>
-                <a href="#booking" class="nav-btn"><i class="fa-solid fa-bolt"></i> احجز مقعدك</a>
+                <a href="#about">عن المستر</a>
+                <a href="#features">المميزات</a>
+                <a href="#booking">الحجز</a>
+                <a href="https://www.facebook.com/elbanna.444" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://wa.me/201097905005" target="_blank"><i class="fab fa-whatsapp"></i></a>
             </div>
-            <div class="nav-socials">
-                <a href="https://www.facebook.com/elbanna.444" target="_blank" class="social-icon-top"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://wa.me/201097905005" target="_blank" class="social-icon-top"><i class="fab fa-whatsapp"></i></a>
-            </div>
-        </div>
-    </nav>
+        </nav>
 
-    <!-- الهيدر السينمائي (Hero Section) -->
-    <header class="hero-premium">
-        <div class="hero-overlay"></div>
-        <div class="hero-grid-bg"></div>
-        <div class="hero-circle-glow"></div>
-        
         <div class="heroContent">
-            <div class="badge-2027"><span>🎯 فتح باب الحجز لعام 2027</span></div>
-            <div class="main-logo-wrapper">
-                <div class="logo-ring"></div>
-                <img src="logo.png" class="mainLogo" alt="Mr. ElBanna">
-            </div>
-            <h1 class="glitch-text">أ / السيد البنا</h1>
-            <h2 class="sub-title">سيد الكلمة وفارس اللغة العربية</h2>
-            <p class="hero-p">ابدأ رحلتك نحو الدرجة النهائية بأحدث النظم التعليمية التفاعلية والتأسيس الحديث لمختلف المراحل الدراسية.</p>
-            
-            <div class="hero-actions">
-                <a href="#booking" class="btn-primary-neon">
-                    <span>احجز الآن وتفوق</span>
-                    <i class="fa-solid fa-chevron-left animate-arrow"></i>
-                </a>
-                <a href="#about" class="btn-secondary-glass">اكتشف المزيد</a>
-            </div>
+            <img src="logo.png" class="mainLogo">
+            <h1>أ / السيد البنا</h1>
+            <h2>مدرس اللغة العربية</h2>
+            <p>ابدأ رحلتك نحو التفوق واحجز مكانك الآن للعام الدراسي 2027.</p>
+            <a href="#booking" class="heroBtn">احجز الآن <i class="fa-solid fa-arrow-left"></i></a>
         </div>
     </header>
 
-    <!-- بطاقة التعريف الإبداعية -->
-    <section id="about" class="premium-section standard-padding">
-        <div class="section-header">
-            <span class="section-tag">البطاقة الشخصية</span>
-            <h2>من هو أ / السيد البنا؟</h2>
-            <div class="header-line"></div>
-        </div>
-        <div class="about-card-glow">
-            <p>خبير تدريس لغة الضاد للمراحل الثانوية والإعدادية والابتدائية بأحدث استراتيجيات الفهم والتحليل البديلة للحفظ، صاحب سلسلة ومراجعات <strong>"شامل البنا"</strong> الشاملة والاختبارات الدورية الذكية لضمان أعلى مستويات التفوق والوصول لمنصات التكريم.</p>
-        </div>
+    <!-- قسم عن المستر -->
+    <section id="about" class="fade-in-section">
+        <h2>من هو أ / السيد البنا ؟</h2>
+        <p>خبرة في تدريس اللغة العربية مع شرح مبسط وامتحانات دورية ومتابعة مستمرة حتى تحقيق أفضل النتائج.</p>
     </section>
 
-    <!-- شبكة المميزات بتأثير الـ 3D Hover -->
-    <section id="features" class="premium-section standard-padding">
-        <div class="section-header">
-            <span class="section-tag">لماذا منصتنا؟</span>
-            <h2>معايير التفوق الاستثنائية</h2>
-            <div class="header-line"></div>
-        </div>
-        <div class="cards-grid">
-            <div class="feature-card-premium" data-tilt>
-                <div class="card-icon-box cyan-glow"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
-                <h3>شرح تفاعلي مبسط</h3>
-                <p>تفكيك عقد النحو والبلاغة بخرائط ذهنية ووسائل بصرية مذهلة.</p>
+    <!-- قسم المميزات وتأثيرات الكروت السحرية -->
+    <section id="features" class="fade-in-section">
+        <h2>لماذا تختارنا ؟</h2>
+        <div class="cards">
+            <div class="card">
+                <i class="fa-solid fa-book-open"></i>
+                <h3>شرح مبسط</h3>
             </div>
-            <div class="feature-card-premium" data-tilt>
-                <div class="card-icon-box gold-glow"><i class="fa-solid fa-laptop-code"></i></div>
-                <h3>امتحانات دورية ذكية</h3>
-                <p>تقييم دوري يحاكي أسلوب امتحانات الوزارة والمنظومة الجديدة.</p>
+            <div class="card">
+                <i class="fa-solid fa-file-pen"></i>
+                <h3>امتحانات دورية</h3>
             </div>
-            <div class="feature-card-premium" data-tilt>
-                <div class="card-icon-box purple-glow"><i class="fa-solid fa-ranking-star"></i></div>
-                <h3>متابعة رقمية صارمة</h3>
-                <p>تقارير دورية مستمرة لولي الأمر لمواكبة مستوى الطالب أولاً بأول.</p>
+            <div class="card">
+                <i class="fa-solid fa-chart-line"></i>
+                <h3>متابعة مستمرة</h3>
             </div>
-            <div class="feature-card-premium" data-tilt>
-                <div class="card-icon-box red-glow"><i class="fa-solid fa-trophy"></i></div>
-                <h3>مراجعات نهائية ذهبية</h3>
-                <p>كراسات المراجعة الأقوى "الكبسولة" الشاملة لكل جزيئات المنهج.</p>
+            <div class="card">
+                <i class="fa-solid fa-award"></i>
+                <h3>مراجعات نهائية</h3>
             </div>
         </div>
     </section>
 
-    <!-- قسم الإحصائيات الفخم -->
-    <section id="stats" class="premium-section stats-parallax">
-        <div class="stats-grid-container">
-            <div class="stat-item-premium">
-                <div class="stat-number counter" data-target="2500">+0</div>
-                <div class="stat-label">طالب متفوق بالمنصة</div>
+    <!-- الإحصائيات والأرقام التفاعلية -->
+    <section id="stats" class="fade-in-section">
+        <h2>إنجازاتنا</h2>
+        <div class="stats-box">
+            <div class="stat">
+                <h3 class="counter" data-target="2500">+0</h3>
+                <p>طالب</p>
             </div>
-            <div class="stat-item-premium">
-                <div class="stat-number counter" data-target="98">0%</div>
-                <div class="stat-label">نسبة النجاح والقبول</div>
+            <div class="stat">
+                <h3 class="counter" data-target="98">0%</h3>
+                <p>نسبة النجاح</p>
             </div>
-            <div class="stat-item-premium">
-                <div class="stat-number counter" data-target="15">0+</div>
-                <div class="stat-label">عام من العطاء والخبرة</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- آراء الطلاب بشكل بطاقات مراجعة فاخرة -->
-    <section id="reviews" class="premium-section standard-padding">
-        <div class="section-header">
-            <span class="section-tag">قصص نجاح</span>
-            <h2>ماذا قالوا عن مستر السيد البنا؟</h2>
-            <div class="header-line"></div>
-        </div>
-        <div class="reviews-flex">
-            <div class="review-card-premium">
-                <div class="quote-mark"><i class="fa-solid fa-quote-right"></i></div>
-                <div class="stars-gold"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                <p>"بفضل الله ثم المستر، النحو والبلاغة بقوا أسهل فروع المادة بعد ما كانوا عقدة حياتي. بجد الشرح والامتحانات في حتة تانية خالص."</p>
-                <div class="reviewer-info">
-                    <h4>طالب بالثانوية العامة</h4>
-                    <span>حاصل على 79.5 في العربي</span>
-                </div>
-            </div>
-            <div class="review-card-premium">
-                <div class="quote-mark"><i class="fa-solid fa-quote-right"></i></div>
-                <div class="stars-gold"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                <p>"المتابعة والالتزام والامتحانات المفاجئة بتجبر الطالب يذاكر أول بأول. شكراً جزيلاً لمستر السيد وفريق العمل المحترم على مجهودهم الجبار."</p>
-                <div class="reviewer-info">
-                    <h4>ولي أمر طالب</h4>
-                    <span>المرحلة الإعدادية</span>
-                </div>
+            <div class="stat">
+                <h3 class="counter" data-target="15">0+</h3>
+                <p>سنوات خبرة</p>
             </div>
         </div>
     </section>
 
-    <!-- قسم الحجز والـ Form الزجاجي النيون -->
-    <section id="booking" class="premium-section standard-padding">
-        <div class="booking-wrapper-neon">
-            <div class="section-header">
-                <span class="section-tag-light">تأمين المستقبل</span>
-                <h2 style="color: #fff;">سجل بياناتك الآن وحافظ على مكانك</h2>
-                <p style="color: #a0aec0; margin-top: 10px;">المقاعد محدودة جداً والأولوية لأسبقية الحجز الإلكتروني</p>
+    <!-- آراء الطلاب المتميزة -->
+    <section id="reviews" class="fade-in-section">
+        <h2>آراء الطلاب</h2>
+        <div class="reviews">
+            <div class="review">
+                <div class="stars">★★★★★</div>
+                <p>أفضل مدرس لغة عربية، الشرح بسيط والامتحانات ممتازة.</p>
+                <h4>طالب بالمرحلة الثانوية</h4>
             </div>
-            
-            <form id="bookingForm" class="glass-form">
-                <div class="input-group-neon">
-                    <i class="fa-solid fa-user input-icon"></i>
-                    <input type="text" id="name" placeholder="الاسم ثلاثي أو رباعي للطالب" required>
-                </div>
-                <div class="input-group-neon">
-                    <i class="fa-solid fa-phone input-icon"></i>
-                    <input type="tel" id="phone" placeholder="رقم الهاتف (واتساب متاح ومفتوح)" required>
-                </div>
-                <div class="input-group-neon">
-                    <i class="fa-solid fa-graduation-cap input-icon"></i>
-                    <select id="stage" required>
-                        <option value="">اختر السنة والمرحلة الدراسية</option>
-                        <optgroup label="المرحلة الابتدائية">
-                            <option>الصف الرابع الابتدائي</option>
-                            <option>الصف الخامس الابتدائي</option>
-                            <option>الصف السادس الابتدائي</option>
-                        </optgroup>
-                        <optgroup label="المرحلة الإعدادية">
-                            <option>الصف الأول الإعدادي</option>
-                            <option>الصف الثاني الإعدادي</option>
-                            <option>الصف الثالث الإعدادي</option>
-                        </optgroup>
-                        <optgroup label="المرحلة الثانوية">
-                            <option>الصف الأول الثانوي</option>
-                            <option>الصف الثاني الثانوي</option>
-                            <option>الصف الثالث الثانوي (الثانوية العامة)</option>
-                        </optgroup>
-                    </select>
-                </div>
-                <button type="submit" class="btn-submit-neon">
-                    <span>إرسال وتأكيد طلب الحجز</span>
-                    <i class="fa-solid fa-paper-plane"></i>
-                </button>
-            </form>
+            <div class="review">
+                <div class="stars">★★★★★</div>
+                <p>المتابعة ممتازة وفرق معايا جدًا في المستوى.</p>
+                <h4>ولي أمر</h4>
+            </div>
         </div>
     </section>
 
-    <!-- الفوتر الحديث والمميز جداً -->
-    <footer class="modern-footer">
-        <div class="footer-bottom-grid">
-            <p class="copy">© 2027 جميع الحقوق محفوظة لمنصة الأستاذ السيد البنا</p>
-            <div class="footer-social-links">
-                <a href="https://wa.me/201097905005" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://www.facebook.com/elbanna.444" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                <a href="tel:01097905005"><i class="fa-solid fa-phone"></i></a>
-            </div>
+    <!-- قسم الحجز المتصل بفايربيز -->
+    <section id="booking" class="fade-in-section">
+        <h2>احجز الآن</h2>
+        <form id="bookingForm">
+            <input type="text" id="name" placeholder="الاسم بالكامل" required>
+            <input type="tel" id="phone" placeholder="رقم الهاتف" required>
+            <select id="stage" required>
+                <option value="">اختر المرحلة الدراسية</option>
+                <option>الصف الأول الابتدائي</option>
+                <option>الصف الثاني الابتدائي</option>
+                <option>الصف الثالث الابتدائي</option>
+                <option>الصف الرابع الابتدائي</option>
+                <option>الصف الخامس الابتدائي</option>
+                <option>الصف السادس الابتدائي</option>
+                <option>الصف الأول الإعدادي</option>
+                <option>الصف الثاني الإعدادي</option>
+                <option>الصف الثالث الإعدادي</option>
+                <option>الصف الأول الثانوي</option>
+                <option>الصف الثاني الثانوي</option>
+                <option>الصف الثالث الثانوي</option>
+            </select>
+            <button type="submit">
+                <i class="fa-solid fa-paper-plane"></i> تأكيد الحجز
+            </button>
+        </form>
+    </section>
+
+    <!-- تذييل الموقع والروابط والسنة التلقائية -->
+    <footer>
+        <div class="footer-logo">
+            <img src="logo.png">
+            <h3>أ / سيد البنا</h3>
+            <p>مدرس اللغة العربية</p>
         </div>
+        <div class="footer-icons">
+            <a href="https://wa.me/201097905005" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.facebook.com/elbanna.444" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="tel:01097905005"><i class="fa-solid fa-phone"></i></a>
+        </div>
+        <p class="copy">© 2027 جميع الحقوق محفوظة</p>
     </footer>
 
-    <!-- لوحة تعريف المطور الفخمة بنظام النيون (اسمك في أبهى صورة) -->
-    <div class="developer-ultra-badge">
-        <div class="badge-content">
-            <span class="badge-title"><i class="fa-solid fa-bolt-lightning text-cyan"></i> Engineered & Crafted By</span>
-            <span class="badge-name-dev">Omar Yehia - عمر يحيى</span>
-            <p class="badge-sub-dev">Full-Stack Digital Experiences Developer</p>
+    <!-- لوحة المطور الاحترافية الحركية - عمر يحيى -->
+    <div class="developer-badge-container">
+        <div class="dev-badge">
+            <div class="dev-glow"></div>
+            <i class="fa-solid fa-code dev-icon"></i>
+            <span class="dev-text">تم تصميم وتطوير الموقع بواسطة</span>
+            <strong class="dev-name">Omar Yehia - عمر يحيى</strong>
         </div>
     </div>
 
-    <!-- مكاتب الفايربيز (Firebase App & Firestore Compat v9) -->
+    <!-- مكاتب الفايربيز الأساسية المحدثة -->
     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
 
-    <!-- ملف الأكواد والتفاعلات -->
+    <!-- ملف الأكواد والحركات التفاعلية -->
     <script src="script.js"></script>
 
 </body>
-    </html>
-            
+                                                             </html>
+    
