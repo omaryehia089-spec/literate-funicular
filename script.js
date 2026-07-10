@@ -1,4 +1,4 @@
-// 1. إعدادات فايربيز الخاصة بمشروعك
+// 1. Firebase Configuration
 const firebaseConfig = {
     apiKey: "AIzaSyAfHWDDZuwsMJo6TvD68qhtaw2NaxhVJ1I",
     authDomain: "elbanna-booking.firebaseapp.com",
@@ -9,11 +9,11 @@ const firebaseConfig = {
     measurementId: "G-7T502DC0TL"
 };
 
-// 2. تفعيل فايربيز وقاعدة البيانات
+// 2. Initialize Firebase & Firestore
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
-// 3. شاشة التحميل (Loading Screen)
+// 3. Loading Screen
 window.addEventListener("load", () => {
     const loader = document.getElementById("loader");
     setTimeout(() => {  
@@ -22,24 +22,22 @@ window.addEventListener("load", () => {
     }, 1500);
 });
 
-// 4. كود الحجز وإرسال البيانات لفايربيز عند الضغط على الزرار
+// 4. Booking Form Submission
 const form = document.getElementById("bookingForm");
 
 form.addEventListener("submit", function(e){
     e.preventDefault();
 
-    // جلب البيانات من المربعات
     let name = document.getElementById("name").value.trim();
     let phone = document.getElementById("phone").value.trim();
     let stage = document.getElementById("stage").value;
 
-    // التأكد أن البيانات كاملة
     if(name == "" || phone == "" || stage == ""){
-        alert("من فضلك أكمل جميع البيانات");
+        alert("Please fill all fields!");
         return;
     }
 
-    // إرسال البيانات فوراً لجدول bookings في الفايربيز
+    // Send data to Firebase bookings collection
     db.collection("bookings").add({
         studentName: name,
         studentPhone: phone,
@@ -47,16 +45,15 @@ form.addEventListener("submit", function(e){
         time: new Date()
     })
     .then(() => {
-        // تظهر هذه الرسالة بعد نجاح الحفظ في فايربيز
-        alert("✅ تم إرسال طلب الحجز بنجاح، سيتم التواصل معك قريبًا.");
-        form.reset(); // تفريغ المربعات بعد الحجز
+        alert("Done! Your booking has been sent successfully.");
+        form.reset();
     })
     .catch((error) => {
-        alert("حدث خطأ أثناء الحجز: " + error.message);
+        alert("Error: " + error.message);
     });
 });
 
-// 5. تأثيرات حركة الكروت (Animation)
+// 5. Card Animations
 const cards = document.querySelectorAll(".card");
 cards.forEach(card => {
     card.addEventListener("mouseenter", () => {
@@ -67,7 +64,7 @@ cards.forEach(card => {
     });
 });
 
-// 6. تأثيرات حركة الأزرار
+// 6. Button Effects
 document.querySelectorAll("button, .heroBtn").forEach(btn => {
     btn.addEventListener("mousedown", () => {
         btn.style.transform = "scale(.95)";
@@ -77,6 +74,6 @@ document.querySelectorAll("button, .heroBtn").forEach(btn => {
     });
 });
 
-// 7. تحديث السنة تلقائياً في أسفل الموقع
+// 7. Auto Copyright Year
 document.querySelector(".copy").innerHTML = "© " + new Date().getFullYear() + " جميع الحقوق محفوظة";
-                      
+    
