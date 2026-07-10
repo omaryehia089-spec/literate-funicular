@@ -1,329 +1,614 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Cairo',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#eef5f9;
+color:#222;
+overflow-x:hidden;
+}
+
+a{
+text-decoration:none;
+}
+
+#loader{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:#ffffff;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:99999;
+animation:loaderHide .8s ease 2s forwards;
+}
+
+.loader-circle{
+width:75px;
+height:75px;
+border:6px solid #d9d9d9;
+border-top:6px solid #00a8b5;
+border-radius:50%;
+animation:spin 1s linear infinite;
+}
+
+.hero{
+height:100vh;
+position:relative;
+background:linear-gradient(135deg,#023047,#035c6d,#00a8b5);
+overflow:hidden;
+}
+
+.bg{
+position:absolute;
+width:100%;
+height:100%;
+background:
+radial-gradient(circle at 20% 20%,rgba(255,255,255,.15),transparent 30%),
+radial-gradient(circle at 80% 40%,rgba(255,255,255,.1),transparent 35%),
+radial-gradient(circle at 50% 90%,rgba(255,255,255,.12),transparent 30%);
+animation:bgMove 10s linear infinite alternate;
+}
+
+nav{
+position:relative;
+z-index:5;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
+}
+
+.logoArea{
+display:flex;
+align-items:center;
+gap:12px;
+font-size:24px;
+font-weight:900;
+color:#fff;
+}
+
+.logoArea img{
+width:55px;
+height:55px;
+border-radius:50%;
+background:#fff;
+padding:5px;
+}
+
+.menu{
+display:flex;
+align-items:center;
+gap:20px;
+}
+
+.menu a{
+color:#fff;
+font-size:18px;
+transition:.3s;
+}
+
+.menu a:hover{
+color:#ffd166;
+}
+
+.heroContent{
+position:relative;
+z-index:3;
+height:80%;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+.mainLogo{
+width:220px;
+height:220px;
+border-radius:50%;
+background:#fff;
+padding:12px;
+box-shadow:0 20px 45px rgba(0,0,0,.35);
+animation:float 4s ease-in-out infinite;
+}
+
+.heroContent h1{
+margin-top:25px;
+font-size:56px;
+font-weight:900;
+color:#fff;
+}
+
+.heroContent h2{
+margin-top:10px;
+font-size:28px;
+color:#e9faff;
+}
+
+.heroContent p{
+margin-top:20px;
+max-width:650px;
+line-height:1.9;
+font-size:20px;
+color:#fff;
+}
+
+.heroBtn{
+margin-top:35px;
+padding:18px 50px;
+background:#ffb703;
+color:#fff;
+font-size:22px;
+font-weight:bold;
+border-radius:60px;
+transition:.35s;
+box-shadow:0 15px 35px rgba(0,0,0,.25);
+}
+
+.heroBtn:hover{
+transform:translateY(-6px) scale(1.05);
+background:#fb8500;
+}
+
+@keyframes spin{
+100%{
+transform:rotate(360deg);
+}
+}
+
+@keyframes float{
+50%{
+transform:translateY(-15px);
+}
+}
+
+@keyframes bgMove{
+100%{
+transform:scale(1.15);
+}
+}
+
+@keyframes loaderHide{
+to{
+opacity:0;
+visibility:hidden;
+}
+} 
+#about{
+padding:90px 8%;
+background:#ffffff;
+text-align:center;
+}
+
+#about h2{
+font-size:42px;
+color:#023047;
+margin-bottom:25px;
+}
+
+#about p{
+max-width:850px;
+margin:auto;
+font-size:22px;
+line-height:2;
+color:#555;
+}
+
+#features{
+padding:90px 8%;
+background:#f7fbfd;
+}
+
+#features h2{
+text-align:center;
+font-size:42px;
+color:#023047;
+margin-bottom:60px;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+}
+
+.card{
+background:#ffffff;
+padding:40px 25px;
+border-radius:25px;
+text-align:center;
+transition:.4s;
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+border:1px solid rgba(0,168,181,.15);
+}
+
+.card:hover{
+transform:translateY(-12px) scale(1.03);
+box-shadow:0 25px 50px rgba(0,0,0,.15);
+}
+
+.card i{
+font-size:55px;
+color:#00a8b5;
+margin-bottom:25px;
+}
+
+.card h3{
+font-size:28px;
+color:#023047;
+margin-bottom:15px;
+}
+
+.card p{
+font-size:18px;
+line-height:1.8;
+color:#666;
+}
+
+#stats{
+padding:90px 8%;
+background:linear-gradient(135deg,#023047,#035c6d,#00a8b5);
+}
+
+#stats h2{
+text-align:center;
+font-size:42px;
+color:#fff;
+margin-bottom:55px;
+}
+
+.stats-box{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:30px;
+}
+
+.stat{
+background:rgba(255,255,255,.12);
+backdrop-filter:blur(12px);
+padding:35px;
+border-radius:25px;
+text-align:center;
+border:1px solid rgba(255,255,255,.25);
+transition:.4s;
+}
+
+.stat:hover{
+transform:translateY(-10px);
+}
+
+.stat h3{
+font-size:48px;
+color:#ffd166;
+margin-bottom:15px;
+}
+
+.stat p{
+font-size:22px;
+color:#fff;
+} 
+#reviews{
+padding:90px 8%;
+background:#ffffff;
+}
+
+#reviews h2{
+text-align:center;
+font-size:42px;
+color:#023047;
+margin-bottom:60px;
+}
+
+.reviews{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:30px;
+}
+
+.review{
+background:#fff;
+padding:35px;
+border-radius:25px;
+box-shadow:0 15px 40px rgba(0,0,0,.08);
+transition:.4s;
+border-top:6px solid #00a8b5;
+}
+
+.review:hover{
+transform:translateY(-10px);
+}
+
+.stars{
+font-size:28px;
+color:#FFD700;
+margin-bottom:20px;
+}
+
+.review p{
+font-size:19px;
+line-height:2;
+color:#555;
+}
+
+.review h4{
+margin-top:20px;
+color:#023047;
+}
+
+#booking{
+padding:90px 8%;
+background:linear-gradient(135deg,#eef8fb,#ffffff);
+}
+
+#booking h2{
+text-align:center;
+font-size:42px;
+margin-bottom:50px;
+color:#023047;
+}
+
+#booking form{
+max-width:700px;
+margin:auto;
+background:#fff;
+padding:40px;
+border-radius:25px;
+box-shadow:0 20px 45px rgba(0,0,0,.1);
+}
+
+#booking input,
+#booking select{
+width:100%;
+padding:18px;
+margin-bottom:20px;
+border-radius:15px;
+border:2px solid #ddd;
+font-size:18px;
+outline:none;
+transition:.3s;
+}
+
+#booking input:focus,
+#booking select:focus{
+border-color:#00a8b5;
+box-shadow:0 0 10px rgba(0,168,181,.3);
+}
+
+#booking button{
+width:100%;
+padding:18px;
+border:none;
+border-radius:15px;
+background:linear-gradient(90deg,#00a8b5,#035c6d);
+color:#fff;
+font-size:22px;
+font-weight:bold;
+cursor:pointer;
+transition:.3s;
+}
+
+#booking button:hover{
+transform:scale(1.03);
+box-shadow:0 15px 35px rgba(0,0,0,.2);
+}
+
+footer{
+background:#023047;
+padding:50px 20px;
+text-align:center;
+color:#fff;
+}
+
+.footer-logo img{
+width:90px;
+height:90px;
+border-radius:50%;
+background:#fff;
+padding:6px;
+margin-bottom:15px;
+}
+
+.footer-logo h3{
+font-size:28px;
+margin-bottom:10px;
+}
+
+.footer-icons{
+margin:30px 0;
+}
+
+.footer-icons a{
+display:inline-flex;
+justify-content:center;
+align-items:center;
+width:55px;
+height:55px;
+margin:8px;
+border-radius:50%;
+background:#00a8b5;
+color:#fff;
+font-size:24px;
+transition:.3s;
+}
+
+.footer-icons a:hover{
+transform:scale(1.15);
+background:#ffb703;
+}
+
+.copy,
+.developer{
+margin-top:15px;
+font-size:18px;
+color:#ddd;
+} 
+/* ===========================
+   تأثيرات إضافية
+=========================== */
+
+html{
+scroll-behavior:smooth;
+}
+
+section{
+animation:fadeUp .9s ease;
+}
+
+input,
+select,
+button{
+font-family:'Cairo',sans-serif;
+}
+
+button{
+transition:.35s;
+}
+
+button:active{
+transform:scale(.97);
+}
+
+.heroBtn{
+position:relative;
+overflow:hidden;
+}
+
+.heroBtn::before{
+content:"";
+position:absolute;
+top:0;
+left:-120%;
+width:100%;
+height:100%;
+background:rgba(255,255,255,.35);
+transform:skewX(-25deg);
+transition:.8s;
+}
+
+.heroBtn:hover::before{
+left:120%;
+}
+
+.card::after{
+content:"";
+position:absolute;
+inset:0;
+border-radius:25px;
+pointer-events:none;
+}
+
+.card{
+position:relative;
+overflow:hidden;
+}
+
+.menu a{
+font-weight:bold;
+}
+
+.menu a i{
+font-size:22px;
+}
+
+input::placeholder{
+color:#999;
+}
+
+select{
+cursor:pointer;
+}
+
 /* ==========================================
-   1. الإعدادات العامة والخطوط
+   التأثير النبضي المطور لاسمك (Omar Yehia)
    ========================================== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Cairo', sans-serif;
-    scroll-behavior: smooth;
+.developer {
+margin-top: 25px;
+font-weight: bold;
+color: #ffd166;
+font-size: 19px;
+display: inline-block;
+padding: 10px 25px;
+background: rgba(255, 255, 255, 0.04);
+border: 1px solid rgba(255, 255, 255, 0.1);
+border-radius: 50px;
+box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+transition: all 0.4s ease;
+animation: pulseGlow 2.5s infinite ease-in-out;
 }
 
-body {
-    background-color: #f7f9fc;
-    color: #333;
-    overflow-x: hidden;
+.developer:hover {
+transform: translateY(-4px);
+border-color: #00a8b5;
+color: #fff;
+box-shadow: 0 12px 35px rgba(0, 168, 181, 0.4);
+background: rgba(0, 168, 181, 0.1);
 }
 
-/* ==========================================
-   2. شاشة التحميل (Loader)
-   ========================================== */
-#loader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #ffffff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    transition: all 0.5s ease;
+.developer strong {
+color: #fff;
+text-shadow: 0 0 8px rgba(255,255,255,0.3);
 }
 
-.loader-circle {
-    width: 50px;
-    height: 50px;
-    border: 5px solid #f3f3f3;
-    border-top: 5px solid #0072ff;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
+@keyframes pulseGlow {
+0% { transform: scale(1); box-shadow: 0 8px 25px rgba(0,0,0,0.3); }
+50% { transform: scale(1.03); box-shadow: 0 12px 30px rgba(0, 168, 181, 0.25); border-color: rgba(0, 168, 181, 0.4); }
+100% { transform: scale(1); box-shadow: 0 8px 25px rgba(0,0,0,0.3); }
 }
 
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(50px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
 }
 
-/* ==========================================
-   3. الهيدر (Hero Section)
-   ========================================== */
-.hero {
-    position: relative;
-    min-height: 100vh;
-    background: linear-gradient(135deg, #001f3f 0%, #0072ff 100%);
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
-    overflow: hidden;
+/* ===========================
+   Responsive
+=========================== */
+@media(max-width:900px){
+nav{
+flex-direction:column;
+gap:20px;
 }
-
-nav {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    max-width: 1200px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    z-index: 10;
+.menu{
+flex-wrap:wrap;
+justify-content:center;
 }
-
-.logoArea {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+.heroContent h1{
+font-size:38px;
 }
-
-.logoArea img, .footer-logo img, .mainLogo {
-    width: 50px;
-    height: 50px;
-    object-fit: contain;
+.heroContent h2{
+font-size:22px;
 }
-
-.logoArea span {
-    font-weight: 900;
-    font-size: 16pt;
-    letter-spacing: 1px;
+.heroContent p{
+font-size:17px;
 }
-
-.menu a {
-    color: white;
-    text-decoration: none;
-    margin: 0 15px;
-    font-weight: 700;
-    transition: color 0.3s;
+.mainLogo{
+width:170px;
+height:170px;
 }
-
-.menu a:hover {
-    color: #ffd700;
+#about h2,
+#features h2,
+#stats h2,
+#reviews h2,
+#booking h2{
+font-size:34px;
 }
-
-.heroContent {
-    max-width: 800px;
-    z-index: 2;
+#booking form{
+padding:25px;
 }
-
-.mainLogo {
-    width: 120px;
-    height: 120px;
-    margin-bottom: 20px;
-}
-
-.heroContent h1 {
-    font-size: 36pt;
-    font-weight: 900;
-    margin-bottom: 10px;
-}
-
-.heroContent h2 {
-    font-size: 20pt;
-    font-weight: 400;
-    color: #ffd700;
-    margin-bottom: 20px;
-}
-
-.heroContent p {
-    font-size: 14pt;
-    margin-bottom: 30px;
-    opacity: 0.9;
-}
-
-.heroBtn {
-    display: inline-block;
-    padding: 12px 35px;
-    background-color: #ffd700;
-    color: #001f3f;
-    text-decoration: none;
-    font-weight: 700;
-    border-radius: 50px;
-    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
-}
-
-/* ==========================================
-   4. الأقسام (Sections)
-   ========================================== */
-section {
-    padding: 80px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-section h2 {
-    font-size: 24pt;
-    font-weight: 900;
-    margin-bottom: 30px;
-    position: relative;
-    color: #001f3f;
-}
-
-section h2::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 4px;
-    background-color: #0072ff;
-    margin: 10px auto 0;
-    border-radius: 2px;
-}
-
-/* الكروت والمميزات */
-.cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 25px;
-    margin-top: 40px;
-}
-
-.card {
-    background: white;
-    padding: 40px 20px;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-}
-
-.card i {
-    font-size: 35pt;
-    color: #0072ff;
-    margin-bottom: 15px;
-}
-
-/* ==========================================
-   5. الإحصائيات وآراء الطلاب
-   ========================================== */
-.stats-box {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 30px;
-    background: linear-gradient(135deg, #0072ff, #001f3f);
-    padding: 40px;
-    border-radius: 20px;
-    color: white;
-}
-
-.stat h3 {
-    font-size: 32pt;
-    font-weight: 900;
-    color: #ffd700;
-}
-
-.reviews {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-}
-
-.review {
-    background: white;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    text-align: right;
-}
-
-.stars {
-    color: #ffd700;
-    margin-bottom: 10px;
-}
-
-/* ==========================================
-   6. فورم الحجز (Booking Form)
-   ========================================== */
-#bookingForm {
-    max-width: 500px;
-    margin: 0 auto;
-    background: white;
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-#bookingForm input, #bookingForm select {
-    width: 100%;
-    padding: 15px;
-    border: 1px solid #e2e8f0;
-    border-radius: 10px;
-    font-size: 11pt;
-    background-color: #f8fafc;
-    outline: none;
-    transition: border-color 0.3s;
-}
-
-#bookingForm input:focus, #bookingForm select:focus {
-    border-color: #0072ff;
-    background-color: white;
-}
-
-#bookingForm button {
-    width: 100%;
-    padding: 15px;
-    background: linear-gradient(135deg, #0072ff, #0056c6);
-    color: white;
-    border: none;
-    border-radius: 10px;
-    font-size: 12pt;
-    font-weight: 700;
-    cursor: pointer;
-    box-shadow: 0 5px 15px rgba(0, 114, 255, 0.3);
-}
-
-/* ==========================================
-   7. الفوتر (Footer)
-   ========================================== */
-footer {
-    background-color: #1a202c;
-    color: white;
-    padding: 40px 20px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-}
-
-.footer-icons {
-    display: flex;
-    gap: 15px;
-}
-
-.footer-icons a {
-    color: white;
-    background: rgba(255,255,255,0.1);
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    text-decoration: none;
-    transition: background 0.3s;
-}
-
-.footer-icons a:hover {
-    background: #0072ff;
-}
-
-.copy {
-    font-size: 10pt;
-    opacity: 0.6;
-}
-
-/* استعلامات الشاشة للهواتف */
-@media (max-width: 768px) {
-    .menu { display: none; }
-    .heroContent h1 { font-size: 26pt; }
-    .heroContent h2 { font-size: 16pt; }
-    .stats-box { flex-direction: column; }
    }
    
